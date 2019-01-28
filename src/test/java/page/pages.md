@@ -19,28 +19,16 @@ manutenção.
 # Examples
 ```java
     public class Page {
-        Utils utils = new Utils();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        @AndroidFindBy(id = "idTextInput")
+        @iOSFindBy(accessibility = "id_onda_money")
+        WebElement textInput;
 
-        @AndroidFindBy(id = "nameText")
-        WebElement name;
-
-        @AndroidFindBy(id = "phoneText")
-        WebElement phone;
-
-        @AndroidFindBy(id = "email")
-        WebElement email;
-
-        @AndroidFindBy(xpath = "//*[@text = 'Convidar amigos']")
+        @AndroidFindBy(xpath = "//*[contains(@text, 'screenTitle')]")
+        @iOSXCUITFindBy(iOSNsPredicate = "label == \"screenTitle\"")
         WebElement screenTitle;
 
-        public MGMPage(){
-            driver  = super.getDriver();
-            action = super.getAction();
-            phoneType = super.getPhoneType();
-            PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(utils.getTimeout())), this);
+        public WebElement getScreenTitle(){
+            return screenTitle;
         }
-
-
     }
 ```
