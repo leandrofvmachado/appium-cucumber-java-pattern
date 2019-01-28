@@ -6,7 +6,7 @@ os `.feature` das features da aplicação que está sendo testada.
 # Examples
 ```gherkin
     Given O usuário está na tela de Login
-    When O usuário insere e-mail e senha
+    When O usuário insere e-mail "a@a.a" e senha "123"
     And Clica no botão de Login
     Then O usuário é direcionado a tela inicial
 ```
