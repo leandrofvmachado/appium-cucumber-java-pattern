@@ -20,7 +20,7 @@ manutenção.
 ```java
     public class Page {
         @AndroidFindBy(id = "idTextInput")
-        @iOSFindBy(accessibility = "id_onda_money")
+        @iOSFindBy(accessibility = "id_money")
         WebElement textInput;
 
         @AndroidFindBy(xpath = "//*[contains(@text, 'screenTitle')]")
